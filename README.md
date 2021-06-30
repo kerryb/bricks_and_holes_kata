@@ -1,21 +1,25 @@
-# BricksAndHoles
+# Bricks and Holes
 
-**TODO: Add description**
+Write the function that takes three dimensions of a brick: height(a), width(b)
+and depth(c) and returns true if this brick can fit into a hole with the
+width(w) and height(h).
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `bricks_and_holes` to your list of dependencies in `mix.exs`:
+## Examples
 
 ```elixir
-def deps do
-  [
-    {:bricks_and_holes, "~> 0.1.0"}
-  ]
-end
+does_brick_fit(1, 1, 1, 1, 1) # => true
+
+does_brick_fit(1, 2, 1, 1, 1) # => true
+
+does_brick_fit(1, 2, 2, 1, 1) # => false
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/bricks_and_holes](https://hexdocs.pm/bricks_and_holes).
+## Notes
 
+You can turn the brick with any side towards the hole.
+
+We assume that the brick fits if its sizes equal the ones of the hole (i.e.
+brick size should be less than or equal to the size of the hole, not strictly
+less).
+
+You can't put a brick in at a non-orthogonal angle.
